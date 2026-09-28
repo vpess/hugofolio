@@ -1,4 +1,4 @@
-# my-portfolio
+# Hugofolio 
 
 Portfólio pessoal e blog feito com [Hugo](https://gohugo.io/), com visual inspirado em terminal, sem dependências de Node.js, frameworks CSS ou JavaScript. Todos os templates, estilos e conteúdo ficam neste repositório, então dá para clonar, editar e publicar.
 
