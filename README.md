@@ -18,7 +18,7 @@ hugo version
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/<seu-usuario>/my-portfolio.git
+git clone https://github.com/vpess/hugofolio.git
 cd my-portfolio
 ```
 
