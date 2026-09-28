@@ -1,0 +1,10 @@
+- category: Linguagens
+  items: [Go, Python, TypeScript, JavaScript, SQL]
+- category: Frontend
+  items: [HTML, CSS, React, Hugo]
+- category: Backend
+  items: [Node.js, REST, PostgreSQL, Redis]
+- category: DevOps
+  items: [Docker, Kubernetes, GitHub Actions, Linux]
+- category: Práticas
+  items: [Testes automatizados, Clean Code, CI/CD, Code Review]

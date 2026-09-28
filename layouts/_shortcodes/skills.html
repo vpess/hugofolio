@@ -1,0 +1,10 @@
+{{- with hugo.Data.skills }}
+<dl class="skills">
+  {{- range . }}
+  <div class="skill-row">
+    <dt>{{ .category }}</dt>
+    <dd><ul class="tags">{{ range .items }}<li>{{ . }}</li>{{ end }}</ul></dd>
+  </div>
+  {{- end }}
+</dl>
+{{- end }}

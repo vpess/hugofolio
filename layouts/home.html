@@ -1,0 +1,63 @@
+{{ define "main" }}
+<div class="home-layout">
+  <aside class="profile">
+    <div class="profile-top">
+      <img class="avatar" src="{{ site.Params.avatar | relURL }}" alt="Foto de {{ site.Params.author }}" width="100" height="100">
+
+      <div class="terminal">
+        <div class="terminal-bar" aria-hidden="true">{{ site.Params.prompt }}:~</div>
+        <div class="terminal-body">
+          <p>whoami</p>
+          <h1>{{ site.Params.author }}</h1>
+        </div>
+      </div>
+    </div>
+
+    <p class="bio">{{ site.Params.bio }}</p>
+    {{ partial "social.html" . }}
+
+    {{ with site.GetPage "/about" }}
+    <section class="profile-about">
+      <header class="section-head">
+        <h2 class="hash">sobre</h2>
+        <a href="{{ .RelPermalink }}">saiba mais →</a>
+      </header>
+      <div class="prose">{{ .Summary }}</div>
+      {{ $skills := slice }}
+      {{ range hugo.Data.skills }}{{ $skills = $skills | append .items }}{{ end }}
+      {{ with $skills }}
+        <ul class="tags">{{ range first 12 . }}<li>{{ . }}</li>{{ end }}</ul>
+      {{ end }}
+    </section>
+    {{ end }}
+  </aside>
+
+  <div class="home-content">
+    {{ with site.GetPage "/projects" }}
+    <section class="home-section">
+      <header class="section-head">
+        <h2 class="hash">projetos</h2>
+        <a href="{{ .RelPermalink }}">ver todos →</a>
+      </header>
+      <div class="grid">
+        {{ range first 4 .Pages }}{{ partial "project-card.html" . }}{{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    {{ with site.GetPage "/posts" }}
+    <section class="home-section">
+      <header class="section-head">
+        <h2 class="hash">posts</h2>
+        <a href="{{ .RelPermalink }}">ver todos →</a>
+      </header>
+      {{ with first 5 .Pages.ByDate.Reverse }}
+        <ul class="post-list">{{ range . }}{{ partial "post-item.html" . }}{{ end }}</ul>
+      {{ else }}
+        <p class="muted">Nenhum post publicado ainda.</p>
+      {{ end }}
+    </section>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

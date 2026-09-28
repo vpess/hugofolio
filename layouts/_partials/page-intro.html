@@ -1,0 +1,5 @@
+<header class="page-head">
+  <h1 class="hash">{{ .Title | lower }}</h1>
+  {{ with .Description }}<p class="muted">{{ . }}</p>{{ end }}
+</header>
+{{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}

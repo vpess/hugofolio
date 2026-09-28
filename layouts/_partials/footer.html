@@ -1,0 +1,9 @@
+<footer class="site-footer">
+  <div class="container footer-inner{{ if .IsHome }} container-wide{{ end }}">
+    <p>&copy; {{ now.Year }} {{ site.Params.authorRepo}}</p>
+    <p>
+      Feito com <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>
+      {{- with site.Home.OutputFormats.Get "rss" }} · <a href="{{ .RelPermalink }}">RSS</a>{{ end }}
+    </p>
+  </div>
+</footer>

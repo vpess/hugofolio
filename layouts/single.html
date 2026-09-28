@@ -1,0 +1,19 @@
+{{ define "main" }}
+<article class="post">
+  <header class="page-head">
+    <h1>{{ .Title }}</h1>
+    <p class="meta">
+      {{ partial "date.html" .Date }}
+      · {{ .ReadingTime }} min de leitura
+    </p>
+    {{ with .GetTerms "tags" }}
+      <ul class="tags">{{ range . }}<li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>{{ end }}</ul>
+    {{ end }}
+  </header>
+  <div class="prose">{{ .Content }}</div>
+  <nav class="pager" aria-label="Outros posts">
+    {{ with .NextInSection }}<a href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}
+    {{ with .PrevInSection }}<a class="pager-next" href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ end }}
+  </nav>
+</article>
+{{ end }}

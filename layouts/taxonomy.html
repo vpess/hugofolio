@@ -1,0 +1,8 @@
+{{ define "main" }}
+{{ partial "page-intro.html" . }}
+<ul class="tags tags-lg">
+  {{ range .Pages.ByTitle }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }} <span class="muted">({{ len .Pages }})</span></a></li>
+  {{ end }}
+</ul>
+{{ end }}

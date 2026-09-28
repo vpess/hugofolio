@@ -1,0 +1,54 @@
+baseURL = "https://example.org/"
+title = "Portifólio de Seu Nome"
+defaultContentLanguage = "pt-br"
+enableRobotsTXT = true
+
+[languages.pt-br]
+  label = "Português"
+  weight = 1
+
+[taxonomies]
+  tag = "tags"
+
+[markup.highlight]
+  noClasses = true
+  style = "monokai"
+
+[params]
+  author = "Seu Nome"
+  authorRepo = "github.com/vpess"
+  prompt = "guest@portfolio"
+  role = "Desenvolvedor(a) Full Stack"
+  location = "Brasil"
+  description = "Portfólio, projetos e blog de Seu Nome."
+  bio = "Desenvolvo software com foco em simplicidade, performance e boas práticas. Aqui você encontra meus projetos, textos e um pouco sobre mim."
+  avatar = "images/avatar.svg"
+  favicon = "favicon.png"  # arquivo em static/; sem ele, usa o avatar
+
+  # Redes sociais exibidas na home
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/uruser"
+  [[params.social]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/seunome"
+  [[params.social]]
+    name = "x"
+    url = "https://x.com/seunome"
+  [[params.social]]
+    name = "email"
+    url = "mailto:voce@example.org"
+
+[menus]
+  [[menus.main]]
+    name = "projetos"
+    pageRef = "/projects"
+    weight = 10
+  [[menus.main]]
+    name = "posts"
+    pageRef = "/posts"
+    weight = 20
+  [[menus.main]]
+    name = "sobre"
+    pageRef = "/about"
+    weight = 30

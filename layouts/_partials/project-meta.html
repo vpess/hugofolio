@@ -1,0 +1,9 @@
+{{ with .Params.stack }}
+  <ul class="tags">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+{{ end }}
+{{ if or .Params.repo .Params.demo }}
+  <div class="card-links">
+    {{ with .Params.repo }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">código ↗</a>{{ end }}
+    {{ with .Params.demo }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">demo ↗</a>{{ end }}
+  </div>
+{{ end }}

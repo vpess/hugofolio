@@ -1,0 +1,12 @@
+{{ define "main" }}
+<article class="post">
+  <header class="page-head about-head">
+    <img class="avatar avatar-sm" src="{{ site.Params.avatar | relURL }}" alt="Foto de {{ site.Params.author }}" width="80" height="80">
+    <div>
+      <h1 class="hash">{{ .Title | lower }}</h1>
+      <p class="muted">{{ site.Params.role }}{{ with site.Params.location }} · {{ . }}{{ end }}</p>
+    </div>
+  </header>
+  <div class="prose">{{ .Content }}</div>
+</article>
+{{ end }}

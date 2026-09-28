@@ -1,0 +1,14 @@
+<header class="site-header">
+  <div class="container container-wide header-inner">
+    <nav class="breadcrumb" aria-label="Caminho">
+      <a class="prompt-user" href="{{ "/" | relURL }}">{{ site.Params.prompt }}</a><a class="accent" href="{{ "/" | relURL }}">~</a>
+      {{- range after 1 .Ancestors.Reverse }}<a class="crumb" href="{{ .RelPermalink }}">{{ .Title | lower }}</a>{{ end -}}
+      <span class="crumb" aria-current="page">{{ cond .IsPage .Title (lower .Title) }}</span></nav>
+    <nav class="nav" aria-label="Navegação principal">
+      {{ range site.Menus.main }}
+        {{ $active := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}
+        <a href="{{ .URL }}"{{ if $active }} class="active" aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+    </nav>
+  </div>
+</header>
